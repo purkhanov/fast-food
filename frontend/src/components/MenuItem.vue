@@ -1,8 +1,8 @@
 <template>
-  <div class="cafe-item js-item" data-item-id="1" data-item-price="499">
+  <div class="cafe-item">
     <div class="cafe-item-counter">1</div>
     <div class="cafe-item-photo">
-      <img src="../components/icons/Burger.png" alt="Burger" style="height: 100%;">
+      <img src="../components/icons/Burger.png" alt="Burger">
     </div>
     <div class="cafe-item-label">
       <span class="cafe-item-title">Burger</span>

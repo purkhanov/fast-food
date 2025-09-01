@@ -20,6 +20,10 @@
   height: 78px;
 }
 
+.cafe-item-photo img {
+  height: 100%;
+}
+
 .cafe-item-new {
   position: absolute;
   right: 50%;
