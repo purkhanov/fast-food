@@ -114,8 +114,7 @@ button,
 .counter-show {
   animation-name: badge-show;
 }
-/* .counter-hide { */
-/* } */
+
 .cafe-item-buy-button {
   position: absolute !important;
   background-color: var(--accent-color);
