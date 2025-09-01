@@ -1,15 +1,35 @@
 <template>
   <section class="cafe-page cafe-items" style="max-height: 100%;">
-    <Menu-item class="selected" />
-    <Menu-item />
-    <Menu-item />
-    <Menu-item />
-    <Menu-item />
+    <template v-for="item in itemInfos">
+      <Menu-item :itemInfo="item" :class="{'selected': item.count > 0}" />
+    </template>
   </section>
 </template>
 
 <script setup>
+import { ref } from 'vue'
 import MenuItem from './MenuItem.vue'
+import BurgerImg from '@/components/icons/Burger.png'
+import CakeImg from '@/components/icons/Cake.png'
+
+const itemInfos = ref([
+  {
+    name: 'Cake',
+    price: 1200,
+    img: CakeImg,
+    imgAlt: 'Cake',
+    count: 0,
+    new: true
+  },
+  {
+    name: 'Burger',
+    price: 700,
+    img: BurgerImg,
+    imgAlt: 'Burger',
+    count: 2,
+    new: false
+  }
+])
 </script>
 
 <style scoped>
