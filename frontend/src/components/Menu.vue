@@ -1,7 +1,7 @@
 <template>
   <section class="cafe-page cafe-items" style="max-height: 100%;">
     <template v-for="item in itemInfos">
-      <Menu-item :itemInfo="item" :class="{'selected': item.count > 0}" />
+      <Menu-item :itemInfo="item" />
     </template>
   </section>
 </template>
@@ -11,6 +11,7 @@ import { ref } from 'vue'
 import MenuItem from './MenuItem.vue'
 import BurgerImg from '@/components/icons/Burger.png'
 import CakeImg from '@/components/icons/Cake.png'
+import PizzaImg from '@/components/icons/Pizza.png'
 
 const itemInfos = ref([
   {
@@ -18,7 +19,6 @@ const itemInfos = ref([
     price: 1200,
     img: CakeImg,
     imgAlt: 'Cake',
-    count: 0,
     new: true
   },
   {
@@ -26,20 +26,26 @@ const itemInfos = ref([
     price: 700,
     img: BurgerImg,
     imgAlt: 'Burger',
-    count: 2,
+    new: false
+  },
+  {
+    name: 'Pizza',
+    price: 1500,
+    img: PizzaImg,
+    imgAlt: 'Pizza',
     new: false
   }
 ])
 </script>
 
 <style scoped>
-.cafe-page {
+/* .cafe-page {
   transition: filter var(--animation);
-}
+} */
 
-body.closed .cafe-page {
+/* body.closed .cafe-page {
   filter: grayscale(1) opacity(0.7);
-}
+} */
 
 .cafe-items {
   display: grid;
@@ -52,9 +58,5 @@ body.closed .cafe-page {
 body.order-mode .cafe-items {
   max-height: 0 !important;
   opacity: 0 !important;
-}
-.cafe-items:after {
-  content: '';
-  flex-grow: 2;
 }
 </style>
