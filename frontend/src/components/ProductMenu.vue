@@ -50,7 +50,6 @@
 <script setup>
 import '@/assets/css/menu-item.css'
 import { useProductStore } from '@/stores/product'
-import { computed } from 'vue'
 
 const productStore = useProductStore()
 
@@ -58,7 +57,6 @@ function selectedProductCount(productId) {
   const product = productStore.selectedProducts.find(i => i.id === productId)
   return product ? product.count : 0
 }
-
 </script>
 
 <style scoped>
