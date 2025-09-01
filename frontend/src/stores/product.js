@@ -4,6 +4,7 @@ import { defineStore } from "pinia"
 import BurgerImg from '@/components/icons/Burger.png'
 import CakeImg from '@/components/icons/Cake.png'
 import PizzaImg from '@/components/icons/Pizza.png'
+import instance from "@/utils/axios"
 
 export const useProductStore = defineStore('product', () => {
   const products = ref([
@@ -36,6 +37,21 @@ export const useProductStore = defineStore('product', () => {
   const basket = ref([])
   const selectedProducts = computed(() => basket.value)
 
+  async function fetchProducts() {
+    try {
+      const response = await instance.get('/products')
+
+      if (response.status === 200) {
+        products.value = response.data
+      } else {
+        throw new Error(`HTTP fetching products: ${response.status}`)
+      }
+    } catch (error) {
+      console.error('Error fetching products:', error)
+      throw error
+    }
+  }
+
   function addToBasket(productId) {
     const existing = basket.value.find(i => i.id == productId)
 
@@ -58,5 +74,5 @@ export const useProductStore = defineStore('product', () => {
     }
   }
 
-  return { products, selectedProducts, addToBasket, removeFromBasket }
+  return { products, selectedProducts, fetchProducts, addToBasket, removeFromBasket }
 })
