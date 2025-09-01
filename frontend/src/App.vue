@@ -1,10 +1,10 @@
 <template>
-  <Menu />
+  <ProductMenu />
   <Button class="order-button" />
 </template>
 
 <script setup>
-import Menu from './components/Menu.vue'
+import ProductMenu from './components/ProductMenu.vue'
 import Button from './components/OrderButton.vue'
 </script>
 
