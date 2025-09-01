@@ -1,12 +1,18 @@
 <template>
   <div class="cafe-item">
-    <div class="cafe-item-counter">1</div>
+    <div 
+      class="cafe-item-counter" 
+      :class="{'counter-show': itemInfo.count > 0}"
+      >
+        {{ itemInfo.count }}
+      </div>
     <div class="cafe-item-photo">
-      <img src="../components/icons/Burger.png" alt="Burger">
+      <img :src="itemInfo.img" :alt="itemInfo.imgAlt">
+      <span class="cafe-item-new" v-if="itemInfo.new">New</span>
     </div>
     <div class="cafe-item-label">
-      <span class="cafe-item-title">Burger</span>
-      <span class="cafe-item-price">$4.99</span>
+      <span class="cafe-item-title">{{ itemInfo.name }}</span>
+      <span class="cafe-item-price">{{ itemInfo.price }} ₸</span>
     </div>
     <div class="cafe-item-buttons">
       <button class="cafe-item-decr-button button-item ripple-handler">
@@ -26,4 +32,11 @@
 
 <script setup>
 import '@/assets/css/menu-item.css'
+
+defineProps({
+  itemInfo: {
+    type: Object,
+    required: true
+  }
+})
 </script>
