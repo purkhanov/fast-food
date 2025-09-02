@@ -1,10 +1,17 @@
 <template>
   <div>
-    <button>VIEW ORDER</button>
+    <button>{{ btnName }}</button>
   </div>
 </template>
 
 <script setup>
+defineProps({
+  btnName: {
+    type: String,
+    default: 'VIEW ORDER',
+    required: false
+  }
+})
 </script>
 
 <style scoped>
