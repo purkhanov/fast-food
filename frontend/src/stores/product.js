@@ -58,7 +58,8 @@ export const useProductStore = defineStore('product', () => {
     if (existing) {
       existing.count++
     } else {
-      basket.value.push({ id: productId, count: 1 })
+      const product = products.value.find(i => i.id === productId)
+      basket.value.push({ ...product, count: 1 })
     }
   }
 
@@ -74,5 +75,5 @@ export const useProductStore = defineStore('product', () => {
     }
   }
 
-  return { products, selectedProducts, fetchProducts, addToBasket, removeFromBasket }
+  return { products, basket, selectedProducts, fetchProducts, addToBasket, removeFromBasket }
 })
