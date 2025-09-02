@@ -25,6 +25,7 @@ body .order-overview {
   line-height: 18px;
   font-weight: 500;
   color: var(--accent-color);
+  cursor: pointer;
 }
 .order-item {
   display: none;
