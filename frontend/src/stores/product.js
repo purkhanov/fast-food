@@ -1,9 +1,9 @@
 import { computed, ref } from "vue"
 import { defineStore } from "pinia"
 
-import BurgerImg from '@/components/icons/Burger.png'
-import CakeImg from '@/components/icons/Cake.png'
-import PizzaImg from '@/components/icons/Pizza.png'
+import BurgerImg from '@/assets/icons/Burger.png'
+import CakeImg from '@/assets/icons/Cake.png'
+import PizzaImg from '@/assets/icons/Pizza.png'
 import instance from "@/utils/axios"
 
 export const useProductStore = defineStore('product', () => {
