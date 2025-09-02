@@ -3,18 +3,25 @@
     <div class="order-block">
       <div class="order-header-wrap">
         <h2 class="order-header">Your Order</h2>
-        <span class="order-edit">Edit</span>
+        <span @click="edit" class="order-edit">Edit</span>
       </div>
 
-      <div class="order-item selected" data-item-id="1">
+      <div class="order-item selected" v-for="order in basketStore.basket">
         <div class="order-item-photo">
-          <img src="../assets/icons/Burger.png" alt="Burger" style="height: 100%;">
+          <img :src="order.img" :alt="order.imgAlt" style="height: 100%;">
         </div>
+
         <div class="order-item-label">
-          <div class="order-item-title">Burger <span class="order-item-counter"><span>1</span>x</span></div>
+          <div class="order-item-title">
+            {{ order.name }} 
+            <span class="order-item-counter">
+              <span>{{ order.count }}</span>x
+            </span>
+          </div>
+
           <div class="order-item-description">Meat™</div>
         </div>
-        <div class="order-item-price">$4.99</div>
+        <div class="order-item-price">{{ order.price * order.count }} ₸</div>
       </div>
 
       <div class="text-field-wrap">
@@ -36,7 +43,16 @@
 import '@/assets/css/order-view.css'
 import { useProductStore } from '@/stores/product'
 
+const props = defineProps({
+  showOrderPage: Boolean
+})
+const emit = defineEmits(['update:showOrderPage'])
 const basketStore = useProductStore()
+
+
+function edit() {
+  emit('update:updateShowOrderPage', false)
+}
 </script>
 
 <style scoped>
