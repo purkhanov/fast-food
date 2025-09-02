@@ -1,4 +1,14 @@
-.cafe-item,
+section {
+  /* max-height: 100%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  margin: 0 auto;
+  max-width: 480px;
+  transition: max-height var(--page-animation), opacity var(--page-animation);
+  background-color: var(--block-bg-color);
+}
+
+.product-item,
 .cafe-item-shadow {
   position: relative;
   width: 120px;
@@ -9,22 +19,22 @@
   margin: 0 auto;
 }
 
-.cafe-item-shadow {
+/* .cafe-item-shadow {
   height: 0;
   padding: 0;
   margin: 0;
-}
+} */
 
-.cafe-item-photo {
+.product-item-photo {
   position: relative;
   height: 78px;
 }
 
-.cafe-item-photo img {
+.product-item-photo img {
   height: 100%;
 }
 
-.cafe-item-new {
+.product-item-new {
   position: absolute;
   right: 50%;
   bottom: 10px;
@@ -43,19 +53,19 @@
   outline: none;
   border: none;
 }
-.cafe-item-label {
+.product-item-label {
   display: flex;
   justify-content: center;
 }
-.cafe-item-title {
+.product-item-title {
   font-weight: 500;
 }
 
-.cafe-item-price {
+.product-item-price {
   font-weight: 700;
   white-space: nowrap;
 }
-.cafe-item-price:before {
+.product-item-price:before {
   display: inline-block;
   vertical-align: top;
   content: '';
@@ -66,7 +76,7 @@
   margin: 7px 4px;
 }
 
-.cafe-item-buttons {
+.product-item-buttons {
   display: flex;
   width: 80px;
   justify-content: space-between;
@@ -79,7 +89,7 @@ button {
 }
 
 button,
-.cafe-item-counter {
+.product-item-counter {
   display: inline-block;
   font-family: var(--default-font);
   font-weight: 700;
@@ -95,7 +105,7 @@ button,
   outline: none;
   border: none;
 }
-.cafe-item-counter {
+.product-item-counter {
   position: absolute;
   right: 0;
   top: 0;
@@ -115,7 +125,7 @@ button,
   animation-name: badge-show;
 }
 
-.cafe-item-buy-button {
+.product-item-buy-button {
   position: absolute !important;
   background-color: var(--accent-color);
   top: 0;
@@ -123,35 +133,35 @@ button,
   transition: width var(--animation);
   width: 80px;
 }
-.cafe-item-incr-button {
+.product-item-incr-button {
   position: absolute !important;
   top: 0;
   right: 0;
   transition: width var(--animation);
   width: 80px;
 }
-.selected .cafe-item-incr-button {
+.selected .product-item-incr-button {
   width: 38px;
 }
-.cafe-item-decr-button {
+.product-item-decr-button {
   position: relative;
   width: 38px;
 }
-.cafe-item-decr-button {
+.product-item-decr-button {
   background-color: #e64d44;
   pointer-events: none;
   transform: scale3d(0.9, 0.9, 1);
   transition: transform var(--animation), visibility var(--animation);
   visibility: hidden;
 }
-.selected .cafe-item-decr-button {
+.selected .product-item-decr-button {
   pointer-events: auto;
   transform: scale3d(1, 1, 1);
   visibility: visible;
 }
-.cafe-item-incr-button:before,
-.cafe-item-incr-button:after,
-.cafe-item-decr-button:before {
+.product-item-incr-button:before,
+.product-item-incr-button:after,
+.product-item-decr-button:before {
   display: inline-block;
   position: absolute;
   content: '';
@@ -166,22 +176,22 @@ button,
   border-radius: 1px;
   z-index: 1;
 }
-.cafe-item-incr-button:before,
-.cafe-item-incr-button:after {
+.product-item-incr-button:before,
+.product-item-incr-button:after {
   background-color: rgba(255, 255, 255, 0);
   transition: background-color var(--animation);
 }
-.selected .cafe-item-incr-button:before,
-.selected .cafe-item-incr-button:after {
+.selected .product-item-incr-button:before,
+.selected .product-item-incr-button:after {
   background-color: #fff;
 }
-.cafe-item-incr-button .button-item-label {
+.product-item-incr-button .button-item-label {
   transition: transform var(--animation);
 }
-.selected .cafe-item-incr-button .button-item-label {
+.selected .product-item-incr-button .button-item-label {
   transform: scale3d(0.4, 0, 1);
 }
-.cafe-item-incr-button:after {
+.product-item-incr-button:after {
   width: 3px;
   height: 14px;
 }
@@ -224,11 +234,11 @@ button,
   z-index: 1;
 }
 
-.cafe-item-add-button .ripple,
-.cafe-item-incr-button .ripple {
+.product-item-add-button .ripple,
+.product-item-incr-button .ripple {
   background-color: #ed960b;
 }
-.cafe-item-decr-button .ripple {
+.product-item-decr-button .ripple {
   background-color: #d3362d;
 }
 
