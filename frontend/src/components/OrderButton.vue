@@ -1,12 +1,12 @@
 <template>
   <div>
-    <button>{{ btnName }}</button>
+    <button>{{ buttonText }}</button>
   </div>
 </template>
 
 <script setup>
 defineProps({
-  btnName: {
+  buttonText: {
     type: String,
     default: 'VIEW ORDER',
     required: false
@@ -15,11 +15,11 @@ defineProps({
 </script>
 
 <style scoped>
-div {
+/* div {
   background-color: rgb(15, 15, 15);
   text-align: center;
   height: 4rem;
-}
+} */
 
 button {
   color: #ffffff;
