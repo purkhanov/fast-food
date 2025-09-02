@@ -38,7 +38,7 @@ html.dark body {
   --hint-color: #64666d;
   --placeholder-color: #5d6163;
 }
-body.order-mode {
+body {
   background-color: var(--bg-color);
 }
 
@@ -96,7 +96,7 @@ body.order-mode {
   transition: opacity var(--page-animation);
   opacity: 0;
 }
-body.order-mode .cafe-order-overview {
+body .cafe-order-overview {
   opacity: 1;
 }
 .cafe-order-header-wrap {
