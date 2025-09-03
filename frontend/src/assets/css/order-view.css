@@ -11,6 +11,7 @@ body .order-overview {
   padding: 21px 20px 14px;
   display: flex;
   align-items: center;
+  color: var(--tg-theme-text-color);
 }
 .order-header {
   font-size: 17px;
@@ -56,6 +57,7 @@ body .order-overview {
   line-height: 18px;
   font-weight: 700;
   padding: 3px 0;
+  color: var(--tg-theme-text-color);
 }
 .order-item-counter {
   color: var(--main-color);
@@ -94,6 +96,7 @@ body .order-overview {
   user-select: auto;
   cursor: auto;
   width: 100%;
+  color: var(--tg-theme-text-color);
 }
 .text-field::-webkit-input-placeholder {
   transition: color var(--animation);
@@ -119,5 +122,5 @@ body .order-overview {
   line-height: 18px;
   -webkit-font-smoothing: antialiased;
   padding: 10px 20px 24px;
-  color: var(--hint-color);
+  color: var(--tg-theme-text-color);
 }
