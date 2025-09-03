@@ -15,5 +15,10 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
-  base: '/fast-food/'
+  server: {
+    allowedHosts: [
+      'c7fda6a75117.ngrok-free.app',
+      'your-ngrok-subdomain.ngrok-free.app' // добавьте ваш хост
+    ]
+  }
 })
