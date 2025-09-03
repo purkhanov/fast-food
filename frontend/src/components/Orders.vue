@@ -3,7 +3,7 @@
     <div class="order-block">
       <div class="order-header-wrap">
         <h2 class="order-header">Your Order</h2>
-        <span @click="edit" class="order-edit">Edit</span>
+        <span @click="editBtn" class="order-edit">Edit</span>
       </div>
 
       <OrderItem 
@@ -33,4 +33,10 @@ import { useProductStore } from '@/stores/product'
 import OrderItem from '@/components/OrderItem.vue'
 
 const productStore = useProductStore()
+
+const emit = defineEmits(['edit-clicked'])
+
+function editBtn() {
+  emit('edit-clicked')
+}
 </script>
